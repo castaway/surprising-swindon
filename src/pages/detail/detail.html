@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-slides  loop pager paginationType="fraction" initialSlide="{{ entry.id -1 }}">
+    <ion-slide  *ngFor="let loop_entry of entries">
+      <ion-grid>
+        <ion-row align-items-stretch>
+          <ion-col col-12 col-sm col-md><img *ngIf="loop_entry.mapimg" src="{{ loop_entry.mapimg }}" /></ion-col>
+          <ion-col col-12 col-sm col-md><p><strong>{{ loop_entry.id }}. </strong> {{ loop_entry.description }}</p></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
